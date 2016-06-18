@@ -54,7 +54,7 @@ class MenuController
         print "Input entry number "
         entry = gets.chomp
         
-        if (entry.is_a? String)
+        if (entry == String)
             puts "Invalid input"
             view_number
         else
