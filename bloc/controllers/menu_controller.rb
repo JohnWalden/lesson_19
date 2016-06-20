@@ -52,13 +52,16 @@ class MenuController
     
     def view_number
         print "Input entry number "
-        entry = gets.chomp
+        entry = gets.chomp.to_i
         
-        if (entry == String)
-            puts "Invalid input"
-            view_number
+        if entry < @address_book.entries.count
+            puts @address_book.entries[entry]
+            puts "Press enter to return to the main menu"
+            gets.chomp
+            system "clear"
         else
-            puts "#{entry}"
+            puts "#{entry} is no a valid input"
+            view_number
         end
     end
     
