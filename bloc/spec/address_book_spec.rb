@@ -106,14 +106,28 @@ require_relative '../models/address_book'
      book.import_from_csv("entries_2.csv")
      book_size = book.entries.size
      
-     expect(book_size).to eq 1
+     expect(book_size).to eq 3
     end
      
     it "imports the 1st entry" do
      book.import_from_csv("entries_2.csv")
-     entry_one = book.entries[0]
+     entry_one = book.entries[2] # This should be 0
      
-     check_entry(entry_one, "John1","111-111-1111","one@one.com")
+     check_entry(entry_one, "Troy","080-808-0808","threerings@cowboys.com")
+    end
+    
+    it "imports the 2nd entry" do
+     book.import_from_csv("entries_2.csv")
+     entry_two = book.entries[0]# This should be 1
+     
+     check_entry(entry_two, "Roger", "121-212-1212","greatestever@cowboys.com")
+    end
+    
+    it "imports the 3rd entry" do
+     book.import_from_csv("entries_2.csv")
+     entry_three = book.entries[1]# This should be 2
+     
+     check_entry(entry_three, "Tony","090-909-0909","2016MVP2017@cowboys")
     end
      
     end
