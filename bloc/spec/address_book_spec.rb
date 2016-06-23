@@ -79,12 +79,9 @@ require_relative '../models/address_book'
        check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
      end
      
-     it "Imports the 1st entry from entries_2" do
-      book.import_from_csv("entries_2.csv")
-      entry_two_one = book.entries[1]
-      check_entry(entry_two_one, "John1","111-111-1111","one@one.com")
-     end
    end
+   
+   
    
    describe "#remove_entry" do
        it"removes only one entry to the address book" do
@@ -102,6 +99,23 @@ require_relative '../models/address_book'
            expect(book.entries.first.name).to eq('John Stoccel')
        end
        
+   end
+   
+   describe "#import_from_cvs" do
+    it "imports the correct number of entries" do
+     book.import_from_csv("entries_2.csv")
+     book_size = book.entries.size
+     
+     expect(book_size).to eq 1
+     
+    it "imports the 1st entry" do
+     book.import_from_csv("entries.csv")
+     entry_one = book.entries[0]
+     
+     check_entry(entry_one, "John1","111-111-1111","one@one.com")
+    end
+     
+    end
    end
 
  end
