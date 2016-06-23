@@ -78,6 +78,12 @@ require_relative '../models/address_book'
        entry_five = book.entries[4]
        check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
      end
+     
+     it "Imports the 1st entry from entries_2" do
+      book.import_from_csv("entries_2.csv")
+      entry_two_one = book.entries[1]
+      check_entry(entry_two_one, "John1","111-111-1111","one@one.com")
+     end
    end
    
    describe "#remove_entry" do
