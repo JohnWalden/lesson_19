@@ -157,6 +157,13 @@ require_relative '../models/address_book'
      expect(entry).to be_nil
     end
     
+    it "searches AddressBook for Sally" do
+       book.import_from_csv("entries.csv")
+       entry = book.iterative_search("Sally")
+       expect(entry).to be_a Entry
+       check_entry(entry, "Sally", "555-555-4646", "sally@blocmail.com")
+     end
+    
    end
 
  end

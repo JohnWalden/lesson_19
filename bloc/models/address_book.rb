@@ -69,7 +69,8 @@ class AddressBook
         upper = entries.length
         
         while lower < upper
-            if entries[lower] == name
+            person_name = entries[lower].name
+            if person_name == name
                 return entries[lower]
             else
                 lower += 1
