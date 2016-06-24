@@ -30,6 +30,10 @@ class AddressBook
      end
     end
     
+    #Search AddressBook for a specific entry by name
+    def binary_search(name)
+    end
+    
     def remove_entry(name, phone_number, email)
         remove = nil
         
