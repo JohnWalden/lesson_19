@@ -147,5 +147,16 @@ require_relative '../models/address_book'
        expect(entry).to be_nil
      end
    end
+   
+   #Assignment 22 Iterative_Search Test
+   
+   describe "#iterative_search" do 
+    it "searches for non-existent entry" do
+     book.import_from_csv("entries.csv")
+     entry = book.iterative_search("ProudFoot")
+     expect(entry).to be_nil
+    end
+    
+   end
 
  end

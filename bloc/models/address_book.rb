@@ -62,4 +62,9 @@ class AddressBook
         
         @entries.delete(remove)
     end
+    
+    #Assignment 22 stub
+    def iterative_search(name)
+    end
+    
 end
