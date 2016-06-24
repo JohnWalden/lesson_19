@@ -65,6 +65,18 @@ class AddressBook
     
     #Assignment 22 stub
     def iterative_search(name)
+        lower = 0
+        upper = entries.length
+        
+        while lower < upper
+            if entries[lower] == name
+                return entries[lower]
+            else
+                lower += 1
+            end
+        end
+        
+        return nil
     end
     
 end
