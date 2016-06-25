@@ -129,7 +129,10 @@ class MenuController
             case selection
             when "n"
             when "d"
+                delete_entry(entry)
             when "e"
+                edit_entry(entry)
+                entry_submenu(entry)
             when "m"
                 system "clear"
                 main_menu
