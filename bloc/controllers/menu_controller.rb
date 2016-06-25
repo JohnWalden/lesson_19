@@ -142,7 +142,19 @@ class MenuController
             case selection
             when "n"
             when "d"
-                delete_entry(entry)
+                system "clear"
+                puts "d - delete single entry"
+                puts "NUKE - delete all entries"
+                erase = gets.chomp
+                case erase
+                    when "d"
+                        delete_entry(entry)
+                    when "NUKE"
+                        nuke_entries
+                    else
+                        system "clear"
+                        puts "Invalid input, returning to menu"
+                        entry_submenu(entry)
             when "e"
                 edit_entry(entry)
                 entry_submenu(entry)
