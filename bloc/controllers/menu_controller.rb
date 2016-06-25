@@ -144,4 +144,23 @@ class MenuController
         address_book.entries.delete(entry)
         puts "#{entry.name} has been deleted"
     end
+    
+    def edit_entry(entry)
+        
+        print "Update name: "
+        name = gets.chomp
+        print "Update phone number: "
+        phone_number= gets.chomp
+        print "Update email: "
+        email = gets.chomp
+        
+        entry.name = name if !name.empty?
+        entry.phone_number = phone_number if !phone_number.empty?
+        entry.email = email if !email.empty?
+        system "clear"
+        
+        puts "Update entry: "
+        puts entry
+    end
+        
 end
