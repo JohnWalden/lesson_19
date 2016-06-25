@@ -139,4 +139,9 @@ class MenuController
                 entry_submenu(entry)
             end
     end
+    
+    def delete_entry(entry)
+        address_book.entries.delete(entry)
+        puts "#{entry.name} has been deleted"
+    end
 end
