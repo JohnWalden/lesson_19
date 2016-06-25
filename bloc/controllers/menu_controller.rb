@@ -219,5 +219,19 @@ class MenuController
                 search_submenu(entry)
         end
     end
+    
+    def nuke_entries
+        
+        entry_count = address_book.count
+        
+        while !(entry_count == 0)
+            address_book.entries.delete(entry_count)
+            entry_count -= 1
+        end
+        
+        puts "All entries deleted"
+        
+        main_menu
+    end
         
 end
