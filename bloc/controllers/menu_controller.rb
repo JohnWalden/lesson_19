@@ -155,6 +155,7 @@ class MenuController
                         system "clear"
                         puts "Invalid input, returning to menu"
                         entry_submenu(entry)
+                end
             when "e"
                 edit_entry(entry)
                 entry_submenu(entry)
