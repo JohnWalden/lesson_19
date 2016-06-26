@@ -150,7 +150,7 @@ class MenuController
                     when "d"
                         delete_entry(entry)
                     when "NUKE"
-                        nuke_entries
+                        @address_book.nuke_entries
                     else
                         system "clear"
                         puts "Invalid input, returning to menu"
