@@ -40,6 +40,17 @@ require_relative '../models/address_book'
      end
    end
    
+   describe "#nuke_entries" do
+    it "should delete all entries" do
+     book.add_entry("John","111-111-1111","john@john.com")
+     book.add_entry("Dan","222-222-2222","dad@dad.com")
+     book.add_entry("Tim","333-333-3333","tim@time.com")
+     
+     book.nuke_entries
+     expect(book.entries.size).to eq 0
+    end
+   end
+   
    describe "#import_from_cvs" do
     it "imports the correct number of entries" do
      book.import_from_csv("entries.csv")
@@ -146,6 +157,5 @@ require_relative '../models/address_book'
        entry = book.binary_search("Billy")
        expect(entry).to be_nil
      end
-   end
-
+    end
  end
